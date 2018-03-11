@@ -184,7 +184,7 @@ class Swagger(object):
         return not_none(specs)
 
     def get_host(self):
-        hostname = current_app.config.get('SERVER_NAME', None) or None
+        hostname = current_app.config.get('SWAGGER_HOST', None) or None
         if hostname and self.api.blueprint and self.api.blueprint.subdomain:
             hostname = '.'.join((self.api.blueprint.subdomain, hostname))
         return hostname
